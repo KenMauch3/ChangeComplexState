@@ -22,11 +22,13 @@ function App() {
           name="fName"
           placeholder="First Name"
           onChange={handleFirstNameChange}
+          value={firstName}
         />
         <input
           name="lName"
           placeholder="Last Name"
           onChange={handleLastNameChange}
+          value={lastName}
         />
         <button>Submit</button>
       </form>
