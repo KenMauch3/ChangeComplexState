@@ -7,15 +7,16 @@ function App() {
   });
   
   function handleChange(e) {
-    const newValue = e.target.value;
-    const inputName = e.target.name;
+    const {value, name} = e.target;
 
-    if(inputName==="fName"){
-      setFullName({firstName: newValue, lastName: fullName.lastName})
-    } else if (inputName === "lName") {
-      setFullName({firstName: fullName.firstName,
-      lastName: newValue})
-    }
+    setFullName(prevValue =>{
+      if(name==="fName"){
+        return {firstName: value, lastName: prevValue.lastName};
+      } else if (name === "lName") {
+        return {firstName: prevValue.firstName,
+        lastName: value};
+      }
+    });
   }
 
 
